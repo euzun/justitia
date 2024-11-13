@@ -4,7 +4,7 @@ A Python implementation of Justitia: Cryptographic key derivation from biometric
 
 ## Overview
 
-Justitia provides cryptographic key derivation and fuzzy extractor functions optimized for biometric data. It includes the generation of Locality Sensitive Hash (LSH) for feature arrays, as well as error-tolerant key generation from biometric inferences using secure masking techniques.
+Justitia provides cryptographic key derivation from biometric data, enabling the secure locking and unlocking of a chosen secret (e.g., the private key of a (public, private) key pair) while storing it in a remote database without revealing any biometric data to third parties. Justitia combines the accuracy of state-of-the-art deep learning (DL) models in biometric verification with zero-knowledge-proof (ZKP)-based cryptographic schemes. It introduces sophisticated techniques to transform the fuzzy domain of DL embeddings into a cryptographically compatible Hamming space, using powerful noise-suppressing methods. Please refer our paper for more details.
 
 ### Reference
 
@@ -88,3 +88,7 @@ Which outputs:
 ```bash
 True Negative. secret: [082bfb35d04d81b89df889306866262f] is locked with enrollment_id:1. recoveredSecret: [None] is recovered with query_id: 2
 ```
+
+## License
+
+This project is licensed under the GPLv3 License - see the LICENSE file for details.
