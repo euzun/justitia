@@ -10,7 +10,7 @@ Justitia provides cryptographic key derivation and fuzzy extractor functions opt
 
 If you use Justitia in your research, please cite the following paper:
 
-> Erkam Uzun, Carter Yagemann, Simon Chung, Vladimir Kolesnikov, and Wenke Lee. 2021. Cryptographic Key Derivation from Biometric Inferences for Remote Authentication. In Proceedings of the 2021 ACM Asia Conference on Computer and Communications Security (ASIA CCS '21). Association for Computing Machinery, New York, NY, USA, 629–643. https://doi.org/10.1145/3433210.3437512
+> Erkam Uzun, Carter Yagemann, Simon Chung, Vladimir Kolesnikov, and Wenke Lee. 2021. "Cryptographic Key Derivation from Biometric Inferences for Remote Authentication". In Proceedings of the 2021 ACM Asia Conference on Computer and Communications Security (ASIA CCS '21). Association for Computing Machinery, New York, NY, USA, 629–643. https://doi.org/10.1145/3433210.3437512
 
 ## Requirements
 
@@ -56,7 +56,7 @@ python justitia.py EMB_DIR ENR_ID QUE_ID LSH_BIT_LEN MASK_PROB NROF_SUB_BITS FE_
 
 Where:
 
-* `EMB_DIR:` Path to the embeddings directory. An embedding array source is included in the repo (`lfw_clean_embeddings.p` a FaceNet embedding arrays of samples from `Labeled Faces in the Wild` dataset).
+* `EMB_DIR:` Path to the embeddings directory. An embedding array source, extracted with FaceNet, is included in the repo (`lfw_clean_embeddings.p` belongs to 50 people from `Labeled Faces in the Wild` dataset).
 * `ENR_ID:` Index of the enrollment person (embedding label).
 * `QUE_ID:` Index of the query person (embedding label).
 * `LSH_BIT_LEN:` Length of LSH in bits.
@@ -65,8 +65,26 @@ Where:
 * `FE_ERR_THR:` Number of error bits the fuzzy extractor can tolerate.
 
 ## Example
+
+1. **Same person's biometrics on enrollment and recovery.**
+
 ```bash
-python justitia.py /path/to/embeddings 1 2 128 0.1 8 2
+python justitia.py lfw_clean_embeddings.p 5 5 128 0.7 64 9
 ```
 
-This command will run the biometric key derivation for the enrollment ID 1 and query ID 2 using embeddings located in `/path/to/embeddings`, with the specified parameters for LSH bit length, masking probability, number of bits for subsampling, and fuzzy extractor error threshold.
+Which outputs:
+
+```bash
+True Positive. secret: [27c5e300ff9a927b3aef3730c72b39ac] is locked with enrollment_id:5. recoveredSecret: [27c5e300ff9a927b3aef3730c72b39ac] is recovered with query_id: 5
+```
+
+1. **Different peoples's biometrics on enrollment (id 1) and recovery (id 2).**
+```bash
+python justitia.py lfw_clean_embeddings.p 1 2 128 0.7 64 9
+```
+
+Which outputs:
+
+```bash
+True Negative. secret: [082bfb35d04d81b89df889306866262f] is locked with enrollment_id:1. recoveredSecret: [None] is recovered with query_id: 2
+```
