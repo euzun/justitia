@@ -78,7 +78,7 @@ Which outputs:
 True Positive. secret: [27c5e300ff9a927b3aef3730c72b39ac] is locked with enrollment_id:5. recoveredSecret: [27c5e300ff9a927b3aef3730c72b39ac] is recovered with query_id: 5
 ```
 
-1. **Different peoples's biometrics on enrollment (id 1) and recovery (id 2).**
+2. **Different peoples's biometrics on enrollment (id 1) and recovery (id 2).**
 ```bash
 python justitia.py lfw_clean_embeddings.p 1 2 128 0.7 64 9
 ```
