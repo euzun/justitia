@@ -30,21 +30,18 @@ scipy==1.8.1
 ## Installation
 
 1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/euzun/justitia.git
-   cd justitia
-   ```
+```bash
+git clone https://github.com/euzun/justitia.git
+cd justitia
+```
 2. **Install dependencies:**
-
 To set up the environment and install all necessary packages, run the following command:
-    ```bash
-    pip install -r requirements.txt
-    ```
+```bash
+pip install -r requirements.txt
+```
 
 ## Installing Specific Requirements
 
-    **fastpbkdf2 is used for fast PBKDF2-HMAC key derivation.
-    
-    **numpy and scipy are used for array manipulation, random sampling, and statistical analysis.
-    
-    **scikit-learn is required for normalization operations on hyperplanes in LSH generation.
+    * fastpbkdf2 is used for fast PBKDF2-HMAC key derivation.
+    * numpy and scipy are used for array manipulation, random sampling, and statistical analysis.
+    * scikit-learn is required for normalization operations on hyperplanes in LSH generation.
