@@ -56,7 +56,7 @@ python justitia.py EMB_DIR ENR_ID QUE_ID LSH_BIT_LEN MASK_PROB NROF_SUB_BITS FE_
 
 Where:
 
-* `EMB_DIR:` Path to the embeddings directory.
+* `EMB_DIR:` Path to the embeddings directory. An embedding array source is included in the repo (`lfw_clean_embeddings.p` a FaceNet embedding arrays of samples from `Labeled Faces in the Wild` dataset).
 * `ENR_ID:` Index of the enrollment person (embedding label).
 * `QUE_ID:` Index of the query person (embedding label).
 * `LSH_BIT_LEN:` Length of LSH in bits.
