@@ -28,8 +28,8 @@ __email__ = 'euzun@gatech.edu'
 __copyright__ = 'Copyright (c) 2024 Erkam Uzun'
 __license__ = 'GPLv3+'
 __version__ = '0.1'
-__url__ = ''
-__download_url__ = ''
+__url__ = 'https://github.com/euzun/justitia.git'
+__download_url__ = 'https://github.com/euzun/justitia.git'
 __description__ = 'A Python implementation of Justitia (Uzun et al. "Cryptographic key derivation from biometric inferences for remote authentication")'
 
 from math import log
