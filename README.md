@@ -42,6 +42,6 @@ pip install -r requirements.txt
 
 ## Installing Specific Requirements
 
-    * fastpbkdf2 is used for fast PBKDF2-HMAC key derivation.
-    * numpy and scipy are used for array manipulation, random sampling, and statistical analysis.
-    * scikit-learn is required for normalization operations on hyperplanes in LSH generation.
+* fastpbkdf2 is used for fast PBKDF2-HMAC key derivation.
+* numpy and scipy are used for array manipulation, random sampling, and statistical analysis.
+* scikit-learn is required for normalization operations on hyperplanes in LSH generation.
