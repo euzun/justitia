@@ -42,6 +42,31 @@ pip install -r requirements.txt
 
 ## Installing Specific Requirements
 
-* fastpbkdf2 is used for fast PBKDF2-HMAC key derivation.
-* numpy and scipy are used for array manipulation, random sampling, and statistical analysis.
-* scikit-learn is required for normalization operations on hyperplanes in LSH generation.
+* `fastpbkdf2` is used for fast PBKDF2-HMAC key derivation.
+* `numpy` and `scipy` are used for array manipulation, random sampling, and statistical analysis.
+* `scikit-learn` is required for normalization operations on hyperplanes in LSH generation.
+
+## Usage
+
+Once installed, you can use Justitia by executing the main Python script with the required arguments:
+
+```bash
+python justitia.py EMB_DIR ENR_ID QUE_ID LSH_BIT_LEN MASK_PROB NROF_SUB_BITS FE_ERR_THR
+```
+
+Where:
+
+* `EMB_DIR:` Path to the embeddings directory.
+* `ENR_ID:` Index of the enrollment person (embedding label).
+* `QUE_ID:` Index of the query person (embedding label).
+* `LSH_BIT_LEN:` Length of LSH in bits.
+* `MASK_PROB:` Noise cancellation masking probability.
+* `NROF_SUB_BITS:` Number of bits subsampled in the fuzzy extractor.
+* `FE_ERR_THR:` Number of error bits the fuzzy extractor can tolerate.
+
+## Example
+```bash
+python justitia.py /path/to/embeddings 1 2 128 0.1 8 2
+```
+
+This command will run the biometric key derivation for the enrollment ID 1 and query ID 2 using embeddings located in `/path/to/embeddings`, with the specified parameters for LSH bit length, masking probability, number of bits for subsampling, and fuzzy extractor error threshold.
